@@ -6,14 +6,15 @@ const messages = {
     luck: ['You are lucky today', 'You are lucky this week', 'You are lucky this month'],
     love: ['You are loved', 'You are loved by your family', 'You are loved by your friends']
 };
+let result = [];
 
 const messageGenerator = (obj) => {
     let message = '';
     for (let key in obj) {
         let index = generarNum(obj[key].length);
-        message += `${obj[key][index]}` + ".\t";
+        message = obj[key][index];
+        result.push(message);
     }
-    return message;
 }
 
-console.log(messageGenerator(messages));
+console.log(result);
